@@ -1,5 +1,7 @@
-# libraryjs
+# JS Library
 
-JS librarie to save time ;)
+#JS librarie to save time ;)
 
-Author: Cepeda Julian
+**Author:** Cepeda Julian
+[Personal page](https://cepedajulian.com/).
+
