@@ -1,7 +1,7 @@
 /* 
 ---------------------------------------------------------------------------
  
-JS libraries to save time ;)
+JS librarie to save time ;)
 
 Author: Cepeda Julian
 
