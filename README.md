@@ -1,12 +1,14 @@
 # JS Library
 
-JS library to save some time ;)
+JavaScript library to save some time ;)
 
 **Author:** [Cepeda Julian](https://cepedajulian.com/)
 
 <hr>
 Load the lib in the HTML section Head:<br><br>
+
 <script src="library.js" defer></script>
+
 <hr>
 
 # Available methods
@@ -15,7 +17,7 @@ Load the lib in the HTML section Head:<br><br>
 ```js
   _.ready(...script js...)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
   _.ready( alert('Hola mundo!') )
 ```
@@ -25,7 +27,7 @@ DEMO:<br>
 ```js
   _.trim(String)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
   let string2 = _.trim("    Hola Mundo!    ")
 ```
@@ -35,7 +37,7 @@ DEMO:<br>
 ```js
   _.left(string, int)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
     let string2 = _.left("Hola Mundo!", 4)
 ```
@@ -45,7 +47,7 @@ DEMO:<br>
 ```js
   _.right(string, int)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
     let string2 = _.right("Hola Mundo!", 6)
 ```
@@ -55,7 +57,7 @@ DEMO:<br>
 ```js
   _.isDate(date)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -65,7 +67,7 @@ DEMO:<br>
   ```js
   _.isDateEnglish(date)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -75,7 +77,7 @@ DEMO:<br>
   ```js
   _.isInt(value)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -85,7 +87,7 @@ DEMO:<br>
   ```js
   _.dayWeekText(date)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -95,7 +97,7 @@ DEMO:<br>
   ```js
   _.dayWeekNumber(date)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -105,7 +107,7 @@ DEMO:<br>
   ```js
   _.input(id, string)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -115,7 +117,7 @@ DEMO:<br>
   ```js
   _.div(id, string)
 ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -125,7 +127,7 @@ DEMO:<br>
   ```js
   _.divHide(id)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -135,7 +137,7 @@ DEMO:<br>
   ```js
   _.divShow(id)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -145,7 +147,7 @@ DEMO:<br>
   ```js
   _.selectSelectedValue(id)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -155,7 +157,7 @@ DEMO:<br>
   ```js
   _.selectSelectedText(id)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -165,7 +167,7 @@ DEMO:<br>
   ```js
   _.selectSelectedTranslate(source, target, sort)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -175,7 +177,7 @@ DEMO:<br>
   ```js
   _.selectSort(id)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -185,7 +187,7 @@ DEMO:<br>
   ```js
   _.selectSelectedDelete(id)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -195,7 +197,7 @@ DEMO:<br>
   ```js
   _.radioSelected(id, radio_name)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -205,7 +207,7 @@ DEMO:<br>
   ```js
   _.setJS=function(string)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -230,7 +232,7 @@ DEMO:<br>
   parameters.ee   funciton case error
  
   <br><br>
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -240,7 +242,7 @@ DEMO:<br>
   ```js
   _.json2array(json, keys)
   ```
-  DEMO:<br>
+  Demo:<br>
 ```js
       
 ```
@@ -250,7 +252,7 @@ DEMO:<br>
   ```js
   _.tableCreate(headers, rows, id)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
@@ -260,7 +262,7 @@ DEMO:<br>
   ```js
   _.tableRowAdd (id, rows)
   ```
-DEMO:<br>
+Demo:<br>
 ```js
       
 ```
