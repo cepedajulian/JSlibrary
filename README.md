@@ -11,11 +11,10 @@ JS library to save some time ;)
 
   
 **Available methods**
+//----------------------------------------------------------------------------//
+// At ready LOAD body function
+//----------------------------------------------------------------------------//
 
-//----------------------------------------------------------------------------//
-// At ready LOAD body function                                                //
-//----------------------------------------------------------------------------//
- 
   _.ready(...script js...)
   
   DEMO:
@@ -24,7 +23,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// TRIM function                                                              //
+// TRIM function
 //----------------------------------------------------------------------------//
   
   _.trim(String)
@@ -35,7 +34,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// LEFT function                                                              //
+// LEFT function
 //----------------------------------------------------------------------------//
   
   _.left(string, int)
@@ -46,7 +45,7 @@ JS library to save some time ;)
   </script>
   
 //----------------------------------------------------------------------------//
-// RIGHT function                                                             //
+// RIGHT function
 //----------------------------------------------------------------------------//
   
   _.right(string, int)
@@ -57,7 +56,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// IS DATE spanish function (dd/mm/aaa)   Spanish                             //
+// IS DATE spanish function (dd/mm/aaa)   Spanish version
 //----------------------------------------------------------------------------//
 
   _.isDate(date)
@@ -68,7 +67,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// IS DATE English function (aaaa/mm/dd)                                      //
+// IS DATE English function (aaaa/mm/dd) Database version
 //----------------------------------------------------------------------------//
 
   _.isDateEnglish(date)
@@ -79,7 +78,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// Check IS INT value                                                         //
+// Check IS INT value
 //----------------------------------------------------------------------------//
 
   _.isInt(value)
@@ -90,7 +89,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// DAY of week TEXT                                                           //
+// DAY of week TEXT
 //----------------------------------------------------------------------------//
 
   _.dayWeekText(date)
@@ -101,7 +100,7 @@ JS library to save some time ;)
   </script>
     
 //----------------------------------------------------------------------------//
-// DAY of week Number 0 to 7                                                  //
+// DAY of week Number 0 to 7
 //----------------------------------------------------------------------------//
   
   _.dayWeekNumber(date)
@@ -112,7 +111,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// Input get/set value by ID                                                  //
+// Input get/set value by ID
 //----------------------------------------------------------------------------//
 
   _.input(id, string)
@@ -123,7 +122,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// DIV tag get/set content by ID                                              //
+// DIV tag get/set content by ID
 //----------------------------------------------------------------------------//
 
   _.div(id, string)
@@ -134,7 +133,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// DIV tag hide content by ID                                                 //
+// DIV tag hide content by ID
 //----------------------------------------------------------------------------//
   
   _.divHide(id)
@@ -145,7 +144,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// DIV tag show content by ID                                                 //
+// DIV tag show content by ID
 //----------------------------------------------------------------------------//
   
   _.divShow(id)
@@ -156,7 +155,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// SELECT tag VALUE selected by ID                                            //
+// SELECT tag VALUE selected by ID
 //----------------------------------------------------------------------------//
   
   _.selectSelectedValue(id)
@@ -166,7 +165,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// SELECT tag TEXT selected by ID                                             //
+// SELECT tag TEXT selected by ID
 //----------------------------------------------------------------------------//
 
   _.selectSelectedText(id)
@@ -177,7 +176,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// SELECT tag TRANSLATE selected to OTHER SELECT                              //
+// SELECT tag TRANSLATE selected to OTHER SELECT
 //----------------------------------------------------------------------------//
 
   _.selectSelectedTranslate(source, target, sort)
@@ -188,7 +187,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// SELECT tag SORT content by ID                                              //
+// SELECT tag SORT content by ID
 //----------------------------------------------------------------------------//
 
   _.selectSort(id)
@@ -199,7 +198,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// SELECT tag DELETE selected by ID                                           //
+// SELECT tag DELETE selected by ID
 //----------------------------------------------------------------------------//
 
   _.selectSelectedDelete(id)
@@ -210,7 +209,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// RADIO input tag VALUE selected by ID                                       //
+// RADIO input tag VALUE selected by ID
 //----------------------------------------------------------------------------//
 
   _.radioSelected(id, radio_name)
@@ -221,7 +220,7 @@ JS library to save some time ;)
   </script>
 
 //--------------------------------------------------------------------------------------------------//
-// SET JS into the web context, Very useful when receiving HTML code containing JavaScript via Ajax //
+// SET JS into the web context, Very useful when receiving HTML code containing JavaScript via Ajax
 //--------------------------------------------------------------------------------------------------//
 
   _.setJS=function(string)
@@ -232,7 +231,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// Call to back server via AJAX                                               //
+// Call to back server via AJAX
 //----------------------------------------------------------------------------//
 
   async function ax(type, url, parameters)
@@ -251,7 +250,7 @@ JS library to save some time ;)
   </script>
     
 //----------------------------------------------------------------------------//
-// JSON 2d to Array 2d by keys:value (key to column)                          //
+// JSON 2d to Array 2d by keys:value (key to column)
 //----------------------------------------------------------------------------//
 
   _.json2array(json, keys)
@@ -262,7 +261,7 @@ JS library to save some time ;)
   </script>
     
 //----------------------------------------------------------------------------//
-// Crate Table (id is name of future table)                                   //
+// Crate Table (id is name of future table)
 //----------------------------------------------------------------------------//
 
   _.tableCreate(headers, rows, id)
@@ -273,7 +272,7 @@ JS library to save some time ;)
   </script>
 
 //----------------------------------------------------------------------------//
-// Table Add row by ID                                                        //
+// Table Add row by ID
 //----------------------------------------------------------------------------//
 
   _.tableRowAdd (id, rows)
