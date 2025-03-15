@@ -6,253 +6,215 @@ JS library to save some time ;)
 
 <hr>
 Load the lib in the HTML section Head:<br><br>
-
 <script src="library.js" defer></script>
-
 <hr>
 
 # Available methods
 
 ### At ready LOAD body function<br><br>
-
+```js
   _.ready(...script js...)
-  
-  DEMO:
-  
-  <script>
-    _.ready( alert('Hola mundo!') )
-  </script>
-
+```
+DEMO:<br>
+```js
+  _.ready( alert('Hola mundo!') )
+```
 <hr>
 
 ### TRIM function<br><br>
-
+```js
   _.trim(String)
-  
-  DEMO:
-  
-  <script>
-    let string2 = _.trim("    Hola Mundo!    ")
-  </script>
-
+```
+DEMO:<br>
+```js
+  let string2 = _.trim("    Hola Mundo!    ")
+```
 <hr>
 
 ### LEFT function<br><br>
-  
+```js
   _.left(string, int)
-  
-  DEMO:
-  
-  <script>
-      let string2 = _.left("Hola Mundo!", 4)
-  </script>
-
+```
+DEMO:<br>
+```js
+    let string2 = _.left("Hola Mundo!", 4)
+```
 <hr>
 
-###  RIGHT function<br><br>
-  
+### RIGHT function<br><br>
+```js
   _.right(string, int)
-	
- DEMO:
- 
-  <script>
-      let string2 = _.right("Hola Mundo!", 6)
-  </script>
-
+```
+DEMO:<br>
+```js
+    let string2 = _.right("Hola Mundo!", 6)
+```
 <hr>
 
-###  IS DATE spanish function (dd/mm/aaa)   Spanish version<br><br>
-
+### IS DATE spanish function (dd/mm/aaa)   Spanish version<br><br>
+```js
   _.isDate(date)
-
-  DEMO:
-  
-  <script>
+```
+DEMO:<br>
+```js
       
-  </script>
-  
+```
 <hr>
 
-###  IS DATE English function (aaaa/mm/dd) Database version<br><br>
+### IS DATE English function (aaaa/mm/dd) Database version<br><br>
+  ```js
   _.isDateEnglish(date)
-  
-  DEMO:
-  
-  <script>
+```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### Check IS INT value<br><br>
-
+  ```js
   _.isInt(value)
-  
-  DEMO:
-  
-  <script>
+```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
-###  DAY of week TEXT<br><br>
-
+### DAY of week TEXT<br><br>
+  ```js
   _.dayWeekText(date)
-
-  DEMO:
-  
-  <script>
+```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### DAY of week Number 0 to 7<br><br>
-  
+  ```js
   _.dayWeekNumber(date)
-
-  DEMO:
-  
-  <script>
+```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### Input get/set value by ID<br><br>
-
+  ```js
   _.input(id, string)
-
-  DEMO:
-  
-  <script>
-     
-  </script>
-
+```
+DEMO:<br>
+```js
+      
+```
 <hr>
 
 ### DIV tag get/set content by ID<br><br>
-
+  ```js
   _.div(id, string)
-  
-  DEMO:
-  <script>
+```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### DIV tag hide content by ID<br><br>
-  
+  ```js
   _.divHide(id)
-
-  DEMO:
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
-### DIV tag show content by ID<br><br>
-  
+###  DIV tag show content by ID<br><br>
+  ```js
   _.divShow(id)
-  
-  DEMO:
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
-###  SELECT tag VALUE selected by ID<br><br>
-  
+### SELECT tag VALUE selected by ID<br><br>
+  ```js
   _.selectSelectedValue(id)
- 
-  DEMO:
-  
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### SELECT tag TEXT selected by ID<br><br>
-
+  ```js
   _.selectSelectedText(id)
- 
-  DEMO:
-  
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### SELECT tag TRANSLATE selected to OTHER SELECT<br><br>
-
+  ```js
   _.selectSelectedTranslate(source, target, sort)
-
-  DEMO:
-  
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### SELECT tag SORT content by ID<br><br>
-
+  ```js
   _.selectSort(id)
-
-  DEMO:
-  
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### SELECT tag DELETE selected by ID<br><br>
-
+  ```js
   _.selectSelectedDelete(id)
-
-  DEMO:
-  
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### RADIO input tag VALUE selected by ID<br><br>
-
+  ```js
   _.radioSelected(id, radio_name)
- 
-  DEMO:
-  
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### SET JS into the web context, Very useful when receiving HTML code containing JavaScript via Ajax<br><br>
-
+  ```js
   _.setJS=function(string)
- 
-  DEMO:
-  
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### Call to back server via AJAX<br><br>
-
+  ```js
   async function ax(type, url, parameters)
-  
+  ```
   OPTIONS:
   
   parameters.d    data to send DEFAULT: {}
@@ -267,44 +229,39 @@ Load the lib in the HTML section Head:<br><br>
   
   parameters.ee   funciton case error
  
-  DEMO:
-  
-  <script>
+  <br><br>
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### JSON 2d to Array 2d by keys:value (key to column)<br><br>
-
+  ```js
   _.json2array(json, keys)
-
-  DEMO:
-  
-  <script>
+  ```
+  DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### Crate Table (id is name of future table)<br><br>
-
+  ```js
   _.tableCreate(headers, rows, id)
-
-  DEMO:
-  
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
-
+```
 <hr>
 
 ### Table Add row by ID<br><br>
-
+  ```js
   _.tableRowAdd (id, rows)
-
-  DEMO:
-  
-  <script>
+  ```
+DEMO:<br>
+```js
       
-  </script>
+```
+<hr>
