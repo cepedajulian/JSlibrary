@@ -4,121 +4,135 @@ JS library to save some time ;)
 
 **Author:** [Cepeda Julian](https://cepedajulian.com/)
 
-**Load the lib in the HTML section Head:**
-  <head>
-    <script src="library.js" defer></script>
-  </head>
-  
-**Available methods**
+<hr>
+Load the lib in the HTML section Head:<br><br>
 
-**At ready LOAD body function**
+<script src="library.js" defer></script>
+
+<hr>
+
+# Available methods
+
+### At ready LOAD body function<br><br>
 
   _.ready(...script js...)
   
   DEMO:
+  
   <script>
     _.ready( alert('Hola mundo!') )
   </script>
 
+<hr>
 
-**TRIM function**
+### TRIM function<br><br>
+
   _.trim(String)
   
   DEMO:
+  
   <script>
     let string2 = _.trim("    Hola Mundo!    ")
   </script>
 
+<hr>
 
-**LEFT function**
+### LEFT function<br><br>
   
   _.left(string, int)
   
   DEMO:
+  
   <script>
       let string2 = _.left("Hola Mundo!", 4)
   </script>
-  
-//----------------------------------------------------------------------------//
-// RIGHT function
-//----------------------------------------------------------------------------//
+
+<hr>
+
+###  RIGHT function<br><br>
   
   _.right(string, int)
 	
  DEMO:
+ 
   <script>
       let string2 = _.right("Hola Mundo!", 6)
   </script>
 
-//----------------------------------------------------------------------------//
-// IS DATE spanish function (dd/mm/aaa)   Spanish version
-//----------------------------------------------------------------------------//
+<hr>
+
+###  IS DATE spanish function (dd/mm/aaa)   Spanish version<br><br>
 
   _.isDate(date)
 
   DEMO:
+  
   <script>
       
   </script>
+  
+<hr>
 
-//----------------------------------------------------------------------------//
-// IS DATE English function (aaaa/mm/dd) Database version
-//----------------------------------------------------------------------------//
-
+###  IS DATE English function (aaaa/mm/dd) Database version<br><br>
   _.isDateEnglish(date)
   
   DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// Check IS INT value
-//----------------------------------------------------------------------------//
+<hr>
+
+### Check IS INT value<br><br>
 
   _.isInt(value)
   
   DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// DAY of week TEXT
-//----------------------------------------------------------------------------//
+<hr>
+
+###  DAY of week TEXT<br><br>
 
   _.dayWeekText(date)
 
   DEMO:
+  
   <script>
       
   </script>
-    
-//----------------------------------------------------------------------------//
-// DAY of week Number 0 to 7
-//----------------------------------------------------------------------------//
+
+<hr>
+
+### DAY of week Number 0 to 7<br><br>
   
   _.dayWeekNumber(date)
 
   DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// Input get/set value by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+### Input get/set value by ID<br><br>
 
   _.input(id, string)
 
   DEMO:
+  
   <script>
      
   </script>
 
-//----------------------------------------------------------------------------//
-// DIV tag get/set content by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+### DIV tag get/set content by ID<br><br>
 
   _.div(id, string)
   
@@ -127,9 +141,9 @@ JS library to save some time ;)
       
   </script>
 
-//----------------------------------------------------------------------------//
-// DIV tag hide content by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+### DIV tag hide content by ID<br><br>
   
   _.divHide(id)
 
@@ -138,9 +152,9 @@ JS library to save some time ;)
       
   </script>
 
-//----------------------------------------------------------------------------//
-// DIV tag show content by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+### DIV tag show content by ID<br><br>
   
   _.divShow(id)
   
@@ -149,130 +163,148 @@ JS library to save some time ;)
       
   </script>
 
-//----------------------------------------------------------------------------//
-// SELECT tag VALUE selected by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+###  SELECT tag VALUE selected by ID<br><br>
   
   _.selectSelectedValue(id)
-
+ 
+  DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// SELECT tag TEXT selected by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+### SELECT tag TEXT selected by ID<br><br>
 
   _.selectSelectedText(id)
-  
+ 
   DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// SELECT tag TRANSLATE selected to OTHER SELECT
-//----------------------------------------------------------------------------//
+<hr>
+
+### SELECT tag TRANSLATE selected to OTHER SELECT<br><br>
 
   _.selectSelectedTranslate(source, target, sort)
 
   DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// SELECT tag SORT content by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+### SELECT tag SORT content by ID<br><br>
 
   _.selectSort(id)
 
   DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// SELECT tag DELETE selected by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+### SELECT tag DELETE selected by ID<br><br>
 
   _.selectSelectedDelete(id)
 
   DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// RADIO input tag VALUE selected by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+### RADIO input tag VALUE selected by ID<br><br>
 
   _.radioSelected(id, radio_name)
-  
+ 
   DEMO:
+  
   <script>
       
   </script>
 
-//--------------------------------------------------------------------------------------------------//
-// SET JS into the web context, Very useful when receiving HTML code containing JavaScript via Ajax
-//--------------------------------------------------------------------------------------------------//
+<hr>
+
+### SET JS into the web context, Very useful when receiving HTML code containing JavaScript via Ajax<br><br>
 
   _.setJS=function(string)
-  
+ 
   DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// Call to back server via AJAX
-//----------------------------------------------------------------------------//
+<hr>
+
+### Call to back server via AJAX<br><br>
 
   async function ax(type, url, parameters)
   
-  OPTIONS: 
-  parameters.d    data to send DEFAULT: {}
-  parameters.f    format to send DEFAULT: FORM
-  parameters.r    format of response DEFAULT: JSON
-  parameters.ss   function case success
-  parameters.dd   function olways whitout error
-  parameters.ee   funciton case error
+  OPTIONS:
   
+  parameters.d    data to send DEFAULT: {}
+  
+  parameters.f    format to send DEFAULT: FORM
+  
+  parameters.r    format of response DEFAULT: JSON
+  
+  parameters.ss   function case success
+  
+  parameters.dd   function olways whitout error
+  
+  parameters.ee   funciton case error
+ 
   DEMO:
+  
   <script>
       
   </script>
-    
-//----------------------------------------------------------------------------//
-// JSON 2d to Array 2d by keys:value (key to column)
-//----------------------------------------------------------------------------//
+
+<hr>
+
+### JSON 2d to Array 2d by keys:value (key to column)<br><br>
 
   _.json2array(json, keys)
 
   DEMO:
+  
   <script>
       
   </script>
-    
-//----------------------------------------------------------------------------//
-// Crate Table (id is name of future table)
-//----------------------------------------------------------------------------//
+
+<hr>
+
+### Crate Table (id is name of future table)<br><br>
 
   _.tableCreate(headers, rows, id)
 
   DEMO:
+  
   <script>
       
   </script>
 
-//----------------------------------------------------------------------------//
-// Table Add row by ID
-//----------------------------------------------------------------------------//
+<hr>
+
+### Table Add row by ID<br><br>
 
   _.tableRowAdd (id, rows)
 
   DEMO:
+  
   <script>
       
   </script>
