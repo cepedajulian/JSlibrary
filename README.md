@@ -4,11 +4,10 @@ JS library to save some time ;)
 
 **Author:** [Cepeda Julian](https://cepedajulian.com/)
 
-** Load the lib in the HTML section Head:**
+**Load the lib in the HTML section Head:**
   <head>
     <script src="library.js" defer></script>
   </head>
-
   
 **Available methods**
 
