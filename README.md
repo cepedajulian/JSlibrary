@@ -13,7 +13,6 @@ JS library to save some time ;)
 **Available methods**
 
 **At ready LOAD body function**
-**----------------------------------------------------------------------------**
 
   _.ready(...script js...)
   
@@ -22,10 +21,8 @@ JS library to save some time ;)
     _.ready( alert('Hola mundo!') )
   </script>
 
-//----------------------------------------------------------------------------//
-// TRIM function
-//----------------------------------------------------------------------------//
-  
+
+**TRIM function**
   _.trim(String)
   
   DEMO:
@@ -33,9 +30,8 @@ JS library to save some time ;)
     let string2 = _.trim("    Hola Mundo!    ")
   </script>
 
-//----------------------------------------------------------------------------//
-// LEFT function
-//----------------------------------------------------------------------------//
+
+**LEFT function**
   
   _.left(string, int)
   
