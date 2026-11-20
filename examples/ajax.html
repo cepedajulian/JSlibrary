@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>library.js — AJAX</title>
+  <link rel="stylesheet" href="/examples/demo.css">
+  <script defer src="/dist/library.min.js"></script>
+</head>
+<body>
+<header><h1>AJAX moderno</h1><p>Promises, callbacks y manejo explícito de errores.</p><nav><a href="/">Inicio</a><a href="/examples/ajax.html">AJAX</a><a href="/examples/tables.html">Tablas</a></nav></header>
+<main>
+  <section>
+    <h2>GET con query params</h2>
+    <label for="nombre">Nombre</label><input id="nombre" value="Julián">
+    <div class="actions"><button id="get">Ejecutar GET</button><button id="getCallbacks">GET con callbacks</button></div>
+    <pre id="respuestaGet"></pre>
+  </section>
+  <section>
+    <h2>POST JSON</h2><p class="note">La información se recibe en el servidor local del ejemplo; no se guarda.</p>
+    <div class="actions"><button id="post">Enviar JSON</button><button id="error">Simular error HTTP 422</button></div>
+    <pre id="respuestaPost"></pre>
+  </section>
+  <section>
+    <h2>HTML y scripts opcionales</h2>
+    <p class="note">Una respuesta HTML no ejecuta scripts por defecto. La ejecución explícita solo se debe permitir con fuentes confiables.</p>
+    <div class="actions"><button id="fragmento">Cargar HTML sin ejecutar scripts</button><button id="fragmentoConScript">Ejecutar script confiable explícitamente</button></div>
+    <div class="result" id="fragmentoDestino">Sin datos</div>
+    <pre id="scriptEstado">Ejecuciones de script: 0</pre>
+  </section>
+</main>
+<footer>© 2026 Julián Cepeda · Licencia MIT</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const print = (id, value) => _.id(id).textContent = typeof value === 'string' ? value : JSON.stringify(value, null, 2);
+    _.on('get', 'click', async () => {
+      try { print('respuestaGet', await _.get('/api/saludo', { d: { nombre: _.input('nombre') }, timeout: 5000 })); }
+      catch (err) { print('respuestaGet', err.message); }
+    });
+    _.on('getCallbacks', 'click', () => {
+      ax('GET', '/api/saludo', {
+        d: { nombre: _.input('nombre') },
+        ss: (data) => print('respuestaGet', { via: 'ss', data }),
+        ee: (err) => print('respuestaGet', `Error: ${err.message}`),
+        dd: () => console.log('Petición finalizada')
+      }).catch(console.error);
+    });
+    _.on('post', 'click', async () => {
+      try { print('respuestaPost', await _.post('/api/echo', { mensaje: 'Probando library.js' }, { f: 'JSON' })); }
+      catch (err) { print('respuestaPost', err.message); }
+    });
+    _.on('error', 'click', async () => {
+      try { await _.get('/api/error'); }
+      catch (err) { print('respuestaPost', { name: err.name, status: err.status, data: err.data }); }
+    });
+    window.demoScriptRuns = 0;
+    async function loadSnippet(executeScripts) {
+      try {
+        const html = await _.get('/api/fragment', { r: 'HTML' });
+        _.div('fragmentoDestino', html, { executeScripts });
+        print('scriptEstado', `Ejecuciones de script: ${window.demoScriptRuns}`);
+      } catch (err) { print('scriptEstado', err.message); }
+    }
+    _.on('fragmento', 'click', () => loadSnippet(false));
+    _.on('fragmentoConScript', 'click', () => loadSnippet(true));
+  });
+</script>
+</body>
+</html>

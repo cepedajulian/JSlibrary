@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>library.js — Tablas y selects</title>
+  <link rel="stylesheet" href="/examples/demo.css">
+  <script defer src="/dist/library.min.js"></script>
+</head>
+<body>
+<header><h1>Tablas y selects</h1><p>Generación de tablas, inserción segura y traslado de opciones.</p><nav><a href="/">Inicio</a><a href="/examples/ajax.html">AJAX</a><a href="/examples/tables.html">Tablas</a></nav></header>
+<main>
+  <section>
+    <h2>Tabla generada dinámicamente</h2>
+    <div class="actions"><button id="crear">Crear tabla</button><button id="agregar">Agregar fila</button><button id="html">Agregar HTML saneado</button></div>
+    <div id="tablaContenedor" aria-live="polite"></div>
+    <p class="note">La función crea los encabezados como TH y las celdas como texto por defecto.</p>
+  </section>
+  <section>
+    <h2>Mover opciones entre selects</h2>
+    <div class="grid">
+      <div><label for="origen">Disponibles</label><select id="origen" size="5"><option value="B">Biología</option><option value="A">Álgebra</option><option value="P">Programación</option></select></div>
+      <div><label for="destino">Seleccionadas</label><select id="destino" size="5"><option value="M">Matemática</option></select></div>
+    </div>
+    <div class="actions"><button id="mover">Mover a seleccionadas</button><button id="devolver">Devolver a disponibles</button><button id="ordenar">Ordenar ambas</button></div>
+  </section>
+</main>
+<footer>© 2026 Julián Cepeda · Licencia MIT</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let count = 0;
+    const ensureTable = () => {
+      if (_.qs('#notas')) return;
+      const tabla = _.tableCreate(['Alumno', 'Calificación'], [['Ana', 9], ['Luis', 8]], 'notas');
+      _.id('tablaContenedor').appendChild(tabla);
+    };
+    _.on('crear', 'click', () => {
+      _.id('tablaContenedor').replaceChildren();
+      ensureTable();
+      count = 0;
+    });
+    _.on('agregar', 'click', () => { ensureTable(); count++; _.tableRowAdd('notas', [['Alumno ' + count, count % 11]]); });
+    _.on('html', 'click', () => { ensureTable(); _.tableRowAdd('notas', [['<strong>Nombre destacado</strong><img src=x onerror=alert(1)>', 10]], { html: true }); });
+    _.on('mover', 'click', () => _.selectSelectedTranslate('origen', 'destino', true));
+    _.on('devolver', 'click', () => _.selectSelectedTranslate('destino', 'origen', true));
+    _.on('ordenar', 'click', () => { _.selectSort('origen'); _.selectSort('destino'); });
+  });
+</script>
+</body>
+</html>

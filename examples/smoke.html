@@ -1,0 +1,39 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Browser smoke test</title><script defer src="/dist/library.min.js"></script></head>
+<body>
+<div id="insercion"></div><div id="tabla"></div>
+<select id="uno"><option value="z">Zorro</option><option value="a" selected>Álgebra</option></select>
+<select id="dos"><option value="x">Xilófono</option></select>
+<pre id="result">RUNNING</pre>
+<script>
+window.addEventListener('load', async () => {
+  const failures = [];
+  function check(test, message) { if (!test) failures.push(message); }
+  try {
+    check(typeof window._ === 'object' && _.version === '1.0.1', 'window._');
+    check(window.ax === _.ajax, 'window.ax');
+    check(_.right('abcde', 2) === 'de', 'right');
+    _.div('insercion', '<strong>OK</strong><script>window.xssBad = 1</'+'script><img src="x" onerror="window.xssBad = 2">');
+    check(!window.xssBad, 'no script on html insertion');
+    check(!_.div('insercion').includes('onerror'), 'unsafe onerror removed');
+    check(!_.div('insercion').includes('script'), 'script removed');
+    window.explicitRuns = 0;
+    _.div('insercion', '<span>Done</span><script>window.explicitRuns++;</'+'script>', { executeScripts: true });
+    check(window.explicitRuns === 1, 'explicit execution');
+    const table = _.tableCreate(['Nombre'], [['<script>evil</script>']], 'tabla1');
+    document.getElementById('tabla').appendChild(table);
+    check(table.tBodies[0].rows[0].cells[0].textContent === '<script>evil</script>', 'table safe text');
+    _.tableRowAdd('tabla1', [['Segundo']]);
+    check(table.tBodies[0].rows.length === 2, 'table add');
+    _.selectSort('uno');
+    check(_.selectSelectedValue('uno') === 'a', 'sort selection preserved');
+    check(_.selectSelectedTranslate('uno', 'dos', true), 'select translation');
+    check(document.getElementById('uno').options.length === 1, 'select source removal');
+    const data = await _.get('/api/saludo', { d: { nombre: 'Julian' } });
+    check(data.saludo === 'Hola, Julian', 'ajax get');
+    try { await _.get('/api/error'); failures.push('HTTP error must reject'); }
+    catch (error) { check(error.status === 422, 'HTTP status'); }
+  } catch (error) { failures.push('Exception: ' + String(error.stack || error)); }
+  document.getElementById('result').textContent = failures.length ? 'FAIL: ' + failures.join(' | ') : 'PASS: browser smoke tests';
+});
+</script>
+</body></html>

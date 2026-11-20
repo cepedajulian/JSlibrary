@@ -1,0 +1,30 @@
+{
+  "name": "library-js-cepedajulian",
+  "version": "1.0.1",
+  "description": "Biblioteca JavaScript ligera para DOM, fechas, tablas y AJAX, sin dependencias en el navegador.",
+  "author": "Julián Cepeda (https://github.com/cepedajulian)",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/cepedajulian",
+  "main": "./src/library.js",
+  "browser": "./dist/library.min.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test": "node --test tests/*.test.js",
+    "check": "npm run build && npm test",
+    "demo": "node examples/server.mjs"
+  },
+  "files": [
+    "src/",
+    "dist/",
+    "types/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "types": "./types/library.d.ts"
+}

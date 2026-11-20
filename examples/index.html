@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>library.js — Inicio</title>
+  <link rel="stylesheet" href="/examples/demo.css">
+  <script defer src="/dist/library.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>library.js <small>v1.0.1</small></h1>
+  <p>Biblioteca JavaScript ligera y sin dependencias. DOM, fechas, cadenas, tablas y AJAX.</p>
+  <nav><a href="/">Inicio</a><a href="/examples/ajax.html">AJAX</a><a href="/examples/tables.html">Tablas</a></nav>
+</header>
+<main>
+  <section>
+    <h2>Funciones de cadenas</h2>
+    <div class="grid">
+      <div><label for="cadena">Texto</label><input id="cadena" value="Desarrollo de Aplicaciones"></div>
+      <div><label for="longitud">Número de caracteres</label><input id="longitud" type="number" min="0" value="8"></div>
+    </div>
+    <div class="actions"><button id="btnIzquierda">_.left()</button><button id="btnDerecha">_.right()</button><button id="btnTrim">_.trim()</button></div>
+    <pre id="salidaCadenas">Presioná un botón para probar</pre>
+  </section>
+  <section>
+    <h2>Fechas y validación</h2>
+    <label for="fecha">Fecha (dd/mm/aaaa)</label><input id="fecha" value="20/11/2026">
+    <div class="actions"><button id="btnFecha">Validar y obtener día de semana</button></div>
+    <pre id="salidaFechas"></pre>
+  </section>
+  <section>
+    <h2>Manipulación del DOM</h2>
+    <div id="panel" class="result"><strong>Este panel</strong> se puede ocultar y mostrar.</div>
+    <div class="actions"><button id="ocultar">_.divHide()</button><button id="mostrar">_.divShow()</button><button id="cambiar">_.div()</button></div>
+  </section>
+</main>
+<footer>© 2026 Julián Cepeda · <a href="https://github.com/cepedajulian">GitHub</a> · Licencia MIT</footer>
+<script>
+  // Load is deferred, so this callback also demonstrates _.ready() after DOM parsing.
+  document.addEventListener('DOMContentLoaded', () => {
+    _.on('btnIzquierda', 'click', () => _.id('salidaCadenas').textContent = _.left(_.input('cadena'), Number(_.input('longitud'))));
+    _.on('btnDerecha', 'click', () => _.id('salidaCadenas').textContent = _.right(_.input('cadena'), Number(_.input('longitud'))));
+    _.on('btnTrim', 'click', () => _.id('salidaCadenas').textContent = _.trim(_.input('cadena')));
+    _.on('btnFecha', 'click', () => {
+      const fecha = _.input('fecha');
+      _.id('salidaFechas').textContent = _.isDate(fecha) ? `Fecha válida. Día: ${_.dayWeekText(fecha)}` : 'Fecha inválida';
+    });
+    _.on('ocultar', 'click', () => _.divHide('panel'));
+    _.on('mostrar', 'click', () => _.divShow('panel'));
+    _.on('cambiar', 'click', () => _.div('panel', '<strong>HTML seguro</strong> insertado mediante _.div()'));
+  });
+</script>
+</body>
+</html>
