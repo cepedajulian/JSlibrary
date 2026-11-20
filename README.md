@@ -243,10 +243,6 @@ Esta edición **moderniza y cambia comportamientos**, no garantiza compatibilida
 
 Consultá [MIGRATION.md](MIGRATION.md) para ejemplos de adaptación y [CHANGELOG.md](CHANGELOG.md) para las modificaciones de la versión 1.0.1.
 
-## Publicar en GitHub
-
-Creá (o actualizá) tu repositorio desde tu cuenta [cepedajulian](https://github.com/cepedajulian) y subí el contenido de esta carpeta. El archivo `LICENSE` permite que GitHub detecte automáticamente la licencia MIT. `package.json` incluye `"private": true` para evitar publicación accidental en npm; si decidís publicarla allí, primero revisá el nombre del paquete y retiralo.
-
 ## Contribuciones y licencia
 
 Ver [CONTRIBUTING.md](CONTRIBUTING.md) para aportes y [LICENSE](LICENSE) para el texto íntegro.
